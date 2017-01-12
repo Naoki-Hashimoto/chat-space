@@ -15,10 +15,10 @@
 1. ログイン画面
 1. 新規登録画面
   - 個別TOP画面
-        1. 新規gloup作成画面
+        1. 新規group作成画面
         1. アカウント編集画面
         1. チャット画面
-        1. gloup編集画面
+        1. group編集画面
 
 ##データベース設計
 ###必要なテーブル
@@ -31,7 +31,7 @@
 |:------:|:----:|:-----------:|
 | name | string | null: false |
 | email | string | 主キー |
-####groups_users
+####group_users
 | column | type | restriction |
 |:------:|:----:|:-----------:|
 | group_id | integer | foreign_key: true |
@@ -45,13 +45,13 @@
 | user_id | integer | foreign_key: true |
 
 ###モデル間のリレーション
-####gloup & user
-  「多対多」であるため、groups_usersを媒介とし、
+####group & user
+  「多対多」であるため、group_userを媒介とし、
   「has many 相手モデル名 through group_users」でアソシエーションを組む。
 ####group_user
-  gloup と userを繋げる媒介。それぞれに対してbelongs
+  group と userを繋げる媒介。それぞれに対してbelongs
 ####message
-  gloup ・ user、それぞれに対してbelongs
+  group ・ user、それぞれに対してbelongs
 
 ***
 ###Example
@@ -69,7 +69,7 @@
 | 2 |サンプル乃介| test2@test.com |
 | 3 | Tech-man | test3@test.com |
 | 4 |   橋本   | test4@test.com |
-####group_user
+####group_users
 | id | group_id | user_id |
 |:--:|:--------:|:-------:|
 | 1 | 1 | 1 |
