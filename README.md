@@ -52,24 +52,24 @@ Things you may want to cover:
 ####groups
 | column | type | restriction |
 |:------:|:----:|:-----------:|
-| name | string | not_null |
+| name | string | null: false |
 ####users
 | column | type | restriction |
 |:------:|:----:|:-----------:|
-| name | string | not_null |
+| name | string | null: false |
 | email | string | 主キー |
 ####groups_users
 | column | type | restriction |
 |:------:|:----:|:-----------:|
-| group_id | integer | 外部キー |
-| user_id | integer | 外部キー |
+| group_id | integer | foreign_key: true |
+| user_id | integer | foreign_key: true |
 ####messages
 | column | type | restriction |
 |:------:|:----:|:-----------:|
-| body | text | not_null |
+| body | text | - |
 | image | text | - |
-| group_id | integer | 外部キー |
-| user_id | integer | 外部キー |
+| group_id | integer | foreign_key: true |
+| user_id | integer | foreign_key: true |
 
 ###モデル間のリレーション
 ####gloup & user
