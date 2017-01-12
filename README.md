@@ -31,6 +31,7 @@
 |:------:|:----:|:-----------:|
 | name | string | null: false |
 | email | string | 主キー |
+**add_index :groups, :name**
 ####group_users
 | column | type | restriction |
 |:------:|:----:|:-----------:|
@@ -43,6 +44,7 @@
 | image | text | - |
 | group_id | integer | foreign_key: true |
 | user_id | integer | foreign_key: true |
+**add_index :messages, [:group_id, :user_id]**
 
 ###リレーション
 ####group & user
