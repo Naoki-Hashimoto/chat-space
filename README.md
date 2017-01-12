@@ -35,8 +35,8 @@
 ####group_users
 | column | type | restriction |
 |:------:|:----:|:-----------:|
-| group_id | integer | foreign_key: true |
-| user_id | integer | foreign_key: true |
+| group_id | references :group | foreign_key: true |
+| user_id | references :user | foreign_key: true |
 ####messages
 | column | type | restriction |
 |:------:|:----:|:-----------:|
