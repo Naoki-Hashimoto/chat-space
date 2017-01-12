@@ -51,9 +51,11 @@
   「多対多」であるため、結合用のテーブルとしてgroup_usersを作成・媒介とし、
   「has_and_belongs_to_many 相手モデル名」でアソシエーションを組む。
 ####group_usersテーブル
-  group と userを繋げるテーブル。それぞれに対してbelongs
+  belongs_to :group
+  belongs_to :user
 ####message
-  group ・ user、それぞれに対してbelongs
+  belongs_to :group
+  belongs_to :user
 
 ***
 ###Example
