@@ -44,12 +44,12 @@
 | group_id | integer | foreign_key: true |
 | user_id | integer | foreign_key: true |
 
-###モデル間のリレーション
+###リレーション
 ####group & user
-  「多対多」であるため、group_userを媒介とし、
-  「has many 相手モデル名 through group_users」でアソシエーションを組む。
-####group_user
-  group と userを繋げる媒介。それぞれに対してbelongs
+  「多対多」であるため、結合用のテーブルとしてgroup_usersを作成・媒介とし、
+  「has_and_belongs_to_many 相手モデル名」でアソシエーションを組む。
+####group_usersテーブル
+  group と userを繋げるテーブル。それぞれに対してbelongs
 ####message
   group ・ user、それぞれに対してbelongs
 
@@ -70,19 +70,19 @@
 | 3 | Tech-man | test3@test.com |
 | 4 |   橋本   | test4@test.com |
 ####group_users
-| id | group_id | user_id |
-|:--:|:--------:|:-------:|
-| 1 | 1 | 1 |
-| 2 | 1 | 2 |
-| 3 | 2 | 2 |
-| 4 | 2 | 3 |
-| 5 | 3 | 2 |
-| 6 | 3 | 3 |
-| 7 | 3 | 4 |
-| 8 | 4 | 1 |
-| 9 | 4 | 2 |
-| 10 | 4 | 3 |
-| 11 | 4 | 4 |
+| group_id | user_id |
+|:--------:|:-------:|
+| 1 | 1 |
+| 1 | 2 |
+| 2 | 2 |
+| 2 | 3 |
+| 3 | 2 |
+| 3 | 3 |
+| 3 | 4 |
+| 4 | 1 |
+| 4 | 2 |
+| 4 | 3 |
+| 4 | 4 |
 ####messages
 | id | body | image | group_id | user_id |
 |:--:|:----:|:-----:|:--------:|:-------:|
