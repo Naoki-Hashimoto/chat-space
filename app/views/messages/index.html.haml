@@ -1,10 +1,13 @@
 .hedder チャットグループが作成されました。
 .contents
   .contents__side-content
-    .contents__side-content__user
+    .contents__side-content__user.clearfix
       %h5 seo
-      .contents__side-content__user--pencil
-      .contents__side-content__user--gear
+      .contents__side-content__user__icons
+        %a.contents__side-content__user__icons--pencil
+          %i.fa.fa-pencil-square-o
+        %a.contents__side-content__user__icons--gear
+          %i.fa.fa-cog
     .contents__side-content__group
       .contents__side-content__chat-group
         %p.contents__side-content__chat-group__name sample
@@ -31,7 +34,12 @@
             %p.contents__main-content__chat__messages__message__message-hedder__name neko
             %p.contents__main-content__chat__messages__message__message-hedder__time 2016/09/21 06:16:55
           %p.contents__main-content__chat__messages__message__message-body Good by world!
+
     .contents__main-content__footer
-      .contents__main-content__footer__form
-        %textarea.contents__main-content__footer__form__body{ type: 'text', id: "message", placeholder: "type a message" }
-      %input.contents__main-content__footer__btn{ type: "submit", name:"commit", value: "Send" }
+      %form.contents__main-content__footer__new_message{id: "new_message", enctype: "multipart/form-data", method:"post"}
+        .contents__main-content__footer__new_message__body
+          %textarea{row: "1", placeholder: "type a message", name: "message[body]", id: "message_body"}
+          %label.contents__main-content__footer__new_message__file
+            %input{ type: "file", name: "message[image]", id: "message_image" }
+            %i.fa.fa-image
+        %input{type: "submit", name: "commit", value: "Send" }
