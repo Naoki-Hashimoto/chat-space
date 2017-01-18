@@ -1,9 +1,10 @@
 @import "./reset";
 @import "clearfix";
+@import "color";
 @import "font-awesome";
 
 .hedder {
-  background-color: #38AEF0;
+  background-color: $mainBlue;
   color: white;
   text-align: center;
 }
@@ -22,7 +23,7 @@
         float: left;
         font-size: 16px;
         font-weight: bold;
-        color: #FFFFFF;
+        color: $sideContentText;
         line-height: 60px;
       }
       &__icons{
@@ -38,7 +39,7 @@
     }
     &__chat-group {
       padding: 20px;
-      color: #FFFFFF;
+      color: $sideContentText;
       &__name{
         font-size: 15px;
       }
@@ -79,7 +80,7 @@
           margin: 28px 0;
           padding: 0 20px;
           line-height: 40px;
-          color: #38aef0;
+          color: $mainBlue;
           font-size: 14px;
           border: 2px solid;
         }
@@ -99,7 +100,7 @@
               float: left;
               font-size: 16px;
               font-weight: bold;
-              color: #434A54;
+              color: $chatText;
               margin-bottom: 10px;
             }
             &__time{
@@ -111,7 +112,7 @@
           }
           &__message-body{
             font-size: 14px;
-            color: #434A54;
+            color: $chatText;
           }
         }
       }
@@ -160,7 +161,7 @@
           margin-left: 15px;
           line-height: 50px;
           color: #fff;
-          background-color: #38aef0;
+          background-color: $mainBlue;
           text-align: center;
           border: none;
           padding: 0;
