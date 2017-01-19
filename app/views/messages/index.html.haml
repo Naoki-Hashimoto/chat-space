@@ -2,7 +2,8 @@
 .contents
   .contents__side-content
     .contents__side-content__user
-      %h5 seo
+      %h5
+        = current_user.name
       .contents__side-content__user__icons
         %a.contents__side-content__user__icons--pencil
           %i.fa.fa-pencil-square-o
