@@ -40,6 +40,7 @@
   }
 
   &__field {
+    @include clearfix();
     margin-top: 30px;
 
     &--left {
@@ -71,7 +72,12 @@
     }
   }
 
+  &__search{
+    @include clearfix();
+  }
+
   &__chat-group-user {
+    @include clearfix();
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
