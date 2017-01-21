@@ -93,7 +93,7 @@
       cursor: pointer;
 
       &--add {
-        color: #38aef0;
+        color: $mainBlue;
       }
 
       &--remove {
@@ -106,7 +106,7 @@
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: $mainBlue;
     border: 0;
   }
 }
