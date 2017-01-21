@@ -3,12 +3,7 @@
 @import "clearfix";
 @import "color";
 @import "font-awesome";
-
-.hedder {
-  background-color: $mainBlue;
-  color: white;
-  text-align: center;
-}
+@import "alert";
 
 .contents {
   &__side-content {
