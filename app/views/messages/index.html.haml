@@ -4,9 +4,9 @@
       %h5
         = current_user.name
       .contents__side-content__user__icons
-        %a.contents__side-content__user__icons--pencil{ href: "/group/new" }
+        %a.contents__side-content__user__icons--pencil{ href: new_group_path }
           %i.fa.fa-pencil-square-o
-        %a.contents__side-content__user__icons--gear{ href: "/users/edit" }
+        %a.contents__side-content__user__icons--gear{ href: edit_user_registration_path }
           %i.fa.fa-cog
     .contents__side-content__group
       .contents__side-content__chat-group
