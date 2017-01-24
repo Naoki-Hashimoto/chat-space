@@ -2,7 +2,7 @@
   width: 980px;
   margin: 60px auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: $mainWhite;
   border: $mainBorder;
   border-radius: 5px;
   box-sizing: border-box;
@@ -11,6 +11,7 @@
     letter-spacing: 2px;
     font-size: 24px;
     text-align: center;
+    font-weight: bold;
   }
 
   &__errors {
@@ -102,11 +103,13 @@
     }
   }
 
-  &__action-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    color: #fff;
-    background-color: $mainBlue;
-    border: 0;
+  &__field{
+    &__action-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      color: $mainWhite;
+      background-color: $mainBlue;
+      border: 0;
+    }
   }
 }

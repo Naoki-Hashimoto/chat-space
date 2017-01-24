@@ -12,7 +12,7 @@
         float: left;
         font-size: 16px;
         font-weight: bold;
-        color: $sideContentText;
+        color: $mainWhite;
         line-height: 60px;
       }
       &__icons{
@@ -21,14 +21,14 @@
           display: inline-block;
           margin: 15px 3px;
           line-height: 28px;
-          color: #fff;
+          color: $mainWhite;
           font-size: 20px;
         }
       }
     }
     &__chat-group {
       padding: 20px;
-      color: $sideContentText;
+      color: $mainWhite;
       &__name{
         font-size: 15px;
       }
@@ -149,7 +149,7 @@
           width: 100px;
           margin-left: 15px;
           line-height: 50px;
-          color: #fff;
+          color: $mainWhite;
           background-color: $mainBlue;
           text-align: center;
           border: none;
