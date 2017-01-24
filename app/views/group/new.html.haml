@@ -6,13 +6,6 @@
         = f.label :name, "グループ名", class: "chat-group-form__field__label"
       .chat-group-form__field--right
         = f.text_field :name, class: "chat-group-form__field__input", placeholder: "グループ名を入力してください"
-    / .chat-group-form__field
-    /   .chat-group-form__field--left
-    /     = f.label :name, "チャットメンバーを追加", class: "chat-group-form__field__label"
-    /   .chat-group-form__field--right
-    /     .chat-group-form__search
-    /       = f.text_field :name, placeholder: "追加したいユーザー名を入力してください", id: 'user-search-field', class: 'chat-group-form__field__input'
-    /     #user-search-result
     .chat-group-form__field
       .chat-group-form__field--left
         = f.label :name, "チャットメンバー", class: "chat-group-form__field__label"
