@@ -12,7 +12,7 @@
         float: left;
         font-size: 16px;
         font-weight: bold;
-        color: $sideContentText;
+        color: $mainWhite;
         line-height: 60px;
       }
       &__icons{
@@ -28,7 +28,7 @@
     }
     &__chat-group {
       padding: 20px;
-      color: $sideContentText;
+      color: $mainWhite;
       &__name{
         font-size: 15px;
       }
