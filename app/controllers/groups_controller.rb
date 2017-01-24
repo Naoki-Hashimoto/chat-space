@@ -1,4 +1,4 @@
-class GroupController < ApplicationController
+class GroupsController < ApplicationController
 
   def new
     @group = Group.new
@@ -18,6 +18,5 @@ class GroupController < ApplicationController
   def post_params
     params.require(:group).permit(:name, user_ids:[] )
   end
-
 
 end
