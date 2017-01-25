@@ -20,7 +20,8 @@
         %h2 sample
         %p Memcers: seo neko
       .contents__main-content__group__right
-        %a{ type: "submit"}Edit
+        = link_to edit_group_path(@group) do
+          %input{type: "button", value: "Edit"}
 
     .contents__main-content__chat
       %ul.contents__main-content__chat__messages
