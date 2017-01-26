@@ -1,0 +1,25 @@
+.main-content
+  .main-content__group
+    .main-content__group__left
+      %h2
+        = @group.name
+      %p
+        Members:
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+    .main-content__group__right
+      = link_to edit_group_path(@group) do
+        %input{type: "button", value: "Edit"}
+
+  .main-content__chat
+    %ul.main-content__chat__messages
+      %li.main-content__chat__messages__message
+        .main-content__chat__messages__message__message-hedder
+          %p.main-content__chat__messages__message__message-hedder__name sample
+          %p.main-content__chat__messages__message__message-hedder__time 2016/09/21 06:16:55
+        %p.main-content__chat__messages__message__message-body Hellow world!
+      %li.main-content__chat__messages__message
+        .main-content__chat__messages__message__message-hedder
+          %p.main-content__chat__messages__message__message-hedder__name neko
+          %p.main-content__chat__messages__message__message-hedder__time 2016/09/21 06:16:55
+        %p.main-content__chat__messages__message__message-body Good by world!
