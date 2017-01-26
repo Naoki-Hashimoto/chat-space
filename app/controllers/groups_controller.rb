@@ -21,13 +21,14 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.new
+    @group = Group.find(params[:id])
   end
 
   def update
-    group = Group.update(post_params)
-    if group.user_id == current_user.id
-      redirect_to group_messages(@group)
+    group = Group.find(params[:id])
+    if 
+      group.update(post_params)
+      redirect_to group_messages_path(@group)
     else
       redirect_to edit_group_path, alert: 'グループの更新に失敗しました'
     end
