@@ -1,0 +1,8 @@
+.main-content__footer
+  %form.main-content__footer__new_message{id: "new_message", enctype: "multipart/form-data", method:"post"}
+    .main-content__footer__new_message__body
+      %textarea{row: "1", placeholder: "type a message", name: "message[body]", id: "message_body"}
+      %label.main-content__footer__new_message__file
+        %input{ type: "file", name: "message[image]", id: "message_image" }
+        %i.fa.fa-image
+    %input{type: "submit", name: "commit", value: "Send" }
