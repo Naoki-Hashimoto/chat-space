@@ -21,15 +21,14 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.new
   end
 
   def update
-    group = Group.update(post_params)
-    if group.user_id == current_user.id
-      redirect_to group_messages(@group)
+    if @group.update(post_params)
+      redirect_to group_messages_path(@group), notice: 'グループ編集が完了しました。'
     else
-      redirect_to edit_group_path, alert: 'グループの更新に失敗しました'
+      flash.now[:alert] = 'グループの更新に失敗しました。'
+      render :edit
     end
   end
 
