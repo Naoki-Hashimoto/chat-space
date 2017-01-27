@@ -21,17 +21,14 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    group = Group.find(params[:id])
-    if group.update(post_params)
+    if @group.update(post_params)
       redirect_to group_messages_path(@group), notice: 'グループ編集が完了しました。'
     else
       flash.now[:alert] = 'グループの更新に失敗しました。'
-      @group = group
-      render action: :edit
+      render :edit
     end
   end
 
