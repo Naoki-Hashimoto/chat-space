@@ -1,5 +1,5 @@
 .main-content__footer
-  = form_for [@group, @message], html: {id: "new_message", class: "main-content__footer__new_message"} do |f|
+  = form_for [@group, @message], html: { id: "new_message", class: "main-content__footer__new_message" } do |f|
     .main-content__footer__new_message__body
       = f.text_area :body, id: "message_body", placeholder: "type a message", rows: "1"
     .main-content__footer__new_message__file
