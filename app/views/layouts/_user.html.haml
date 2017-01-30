@@ -1,0 +1,8 @@
+.side-content__user
+  %h5
+    = current_user.name
+  .side-content__user__icons
+    = link_to new_group_path do
+      %i.fa.fa-pencil-square-o
+    = link_to edit_user_registration_path do
+      %i.fa.fa-cog

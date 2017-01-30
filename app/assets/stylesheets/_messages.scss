@@ -25,15 +25,17 @@
       }
     }
   }
-  &__group {
-    padding: 20px;
-    color: $mainWhite;
-    &__name{
-      font-size: 15px;
-    }
-    &__message {
-      font-size: 11px;
-      padding-top: 5px;
+  &__groups {
+    &__group {
+      padding: 20px;
+      color: $mainWhite;
+      &__name{
+        font-size: 15px;
+      }
+      &__message {
+        font-size: 11px;
+        padding-top: 5px;
+      }
     }
   }
 }

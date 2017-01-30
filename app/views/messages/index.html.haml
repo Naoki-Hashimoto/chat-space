@@ -1,5 +1,6 @@
 .side-content
-  = render "layouts/side-content"
+  = render "layouts/user"
+  = render partial: "layouts/groups", collection: @groups
 .main-content
   = render "main-content"
   = render "form"

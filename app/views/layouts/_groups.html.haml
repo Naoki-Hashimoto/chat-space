@@ -1,0 +1,7 @@
+.side-content__groups
+  = link_to group_messages_path(groups) do
+    %ul.side-content__groups__group
+      %li.side-content__groups__group__name
+        = groups.name
+      %li.side-content__groups__group__message
+        = groups.new_message
