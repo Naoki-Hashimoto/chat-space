@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_group
   def index
-    @message = current_user.messages.new
+    @message = Message.new
   end
 
   def create
