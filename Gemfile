@@ -42,6 +42,8 @@ group :development, :test do
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
   gem 'rake', '10.5.0'
+  gem 'devise'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -57,5 +59,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails", "~> 0.9"
 gem "font-awesome-rails"
-gem 'devise'
-gem 'pry-rails'
+
+group :test do
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.1'
+end
