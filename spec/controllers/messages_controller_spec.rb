@@ -25,26 +25,26 @@ describe MessagesController, :type => :controller do
 
   describe 'Post #create' do
     context "@messageが保存できた時" do
-      it "データベースに値が保存される" do
+      it "bodyが入力されている場合、データベースに値が保存される" do
         expect {
         post :create, message: attributes_for(:message), user_id: user, group_id: group
         }.to change(Message, :count).by(1)
       end
 
-      it "正しいビューに遷移する" do
+      it "bodyが入力されている場合、group_messages_pathに遷移する" do
         post :create, message: attributes_for(:message), user_id: user, group_id: group
         expect(response).to redirect_to group_messages_path
       end
     end
 
     context "@messageが保存できなかった時" do
-      it "データベースに値が保存されない" do
+      it "bodyが空の場合、データベースに値が保存されない" do
         expect {
         post :create, message: attributes_for(:message, body: ""), user_id: user, group_id: group
         }.to change(Message, :count).by(0)
       end
 
-      it "正しいビューに遷移しない" do
+      it "bodyが空の場合、indexのビューを表示する" do
         post :create, message: attributes_for(:message, body: ""), user_id: user, group_id: group
         expect(response).to render_template :index
       end
