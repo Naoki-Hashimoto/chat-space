@@ -1,0 +1,8 @@
+%ul.side-groups
+  - @groups.each do |group|
+    %li.side-group
+      = link_to group_messages_path(group) do
+        %p.side-group__name
+          = group.name
+        %p.side-group__message
+          = group.new_message

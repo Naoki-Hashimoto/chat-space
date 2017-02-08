@@ -1,7 +1,7 @@
-.side-content__user
-  %h5
+.side-hedder
+  %h5.side-hedder__user-name
     = current_user.name
-  .side-content__user__icons
+  .side-hedder__icons
     = link_to new_group_path do
       %i.fa.fa-pencil-square-o
     = link_to edit_user_registration_path do
