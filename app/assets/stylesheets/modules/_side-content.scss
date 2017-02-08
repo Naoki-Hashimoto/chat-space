@@ -29,6 +29,7 @@
 
 ul{
   height: calc(100% - 100px);
+  overflow: scroll;
   .side-group {
     padding: 20px;
     &__name{
