@@ -1,0 +1,11 @@
+.main-hedder
+  .main-hedder__left
+    %h2
+      = @group.name
+    %p
+      Members:
+      - @group.group_users.each do |group_user|
+        = group_user.user.name
+  .main-hedder__right
+    = link_to edit_group_path(@group) do
+      %input{ type: "button", value: "Edit" }
