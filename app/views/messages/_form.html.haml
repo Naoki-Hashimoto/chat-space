@@ -1,8 +1,7 @@
-.main-content__footer
-  = form_for [@group, @message], html: { id: "new_message", class: "main-content__footer__new_message" } do |f|
-    .main-content__footer__new_message__body
+.footer
+  = form_for [@group, @message], html: { class: "new-message" } do |f|
+    .new-message__new-body
       = f.text_area :body, id: "message_body", placeholder: "type a message", rows: "1"
-    .main-content__footer__new_message__file
-      = f.label :image do
+      = f.label :image, id: "message_file", type: "file", method: "post" do
         %i.fa.fa-image
-      = f.submit "Send", class: "send"
+    = f.submit "Send", id: "send"

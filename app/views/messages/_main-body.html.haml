@@ -1,0 +1,12 @@
+.main-body
+  %ul.main-body__main-posts
+    - @group.messages.each do |message|
+      %li.message
+        .message__message-hedder
+          %p.message__message-hedder__name
+            = message.user.name
+          %p.message__message-hedder__time
+            = message.created_at
+        .message__body
+          %p.body
+            = message.body
