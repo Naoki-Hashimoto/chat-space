@@ -1,8 +1,8 @@
 $(function() {
   function buildHTML(message) {
-    var user_name = $('<p class = "message__message-hedder__name">').append(data.name)
-    var message_time = $('<p class = "message__message-hedder__time">').append(data.created_at)
-    var message_body = $('<p class = "body">').append(data.body)
+    var user_name = $('<p class = "message__message-hedder__name">').append(message.name)
+    var message_time = $('<p class = "message__message-hedder__time">').append(message.created_at)
+    var message_body = $('<p class = "body">').append(message.body)
     var html = $('<li class = "message">').append(user_name, message_body, message_time);
     return html;
   }
