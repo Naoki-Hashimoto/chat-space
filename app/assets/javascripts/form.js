@@ -1,21 +1,22 @@
 $(function() {
   function buildHTML(message) {
-    var html =
-      '<li class="message">' +
-        '<div class="message__message-hedder">' +
-          '<p class="message__message-hedder__name">' +
-            message.name +
-          '</p>' +
-          '<p class="message__message-hedder__time">' +
-            message.created_at +
-          '</p>' +
-        '</div>' +
-        '<div class="message__body">' +
-          '<p class="body">' +
-            message.body +
-          '</p>' +
-        '</div>' +
-      '</li>'
+    var html =`
+      <li class="message">
+        <div class="message__message-hedder">
+          <p class="message__message-hedder__name">
+            ${gon.user_name}
+          </p>
+          <p class="message__message-hedder__time">
+            ${message.created_at}
+          </p>
+        </div>
+        <div class="message__body">
+          <p class="body">
+            ${message.body}
+          </p>
+        </div>
+      </li>
+      `
     return html;
   }
 
