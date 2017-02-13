@@ -34,6 +34,7 @@ $(function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
+      $('.main-body__main-posts').append(html);
       $('#message_body').val('');
     })
     .fail(function() {
