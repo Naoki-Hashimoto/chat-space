@@ -7,13 +7,13 @@ $(function() {
     return html;
   }
 
-  $('.new_message').on('submit', function(e) {
+  $('.new-message').on('submit', function(e) {
     e.preventDefault();
-    var group_id = gon.user_group;
+    var pathname = location.pathname;
     var formData = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
-      url: '/groups/' + group_id + '/messages.json',
+      url: pathname,
       data: formData,
       processData: false,
       contentType: false,
