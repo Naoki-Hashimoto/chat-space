@@ -21,6 +21,7 @@ class MessagesController < ApplicationController
   def set_group
     @group = Group.find(params[:group_id])
     @groups = current_user.groups
+    gon.user_name = current_user.name
   end
 
   def message_params
