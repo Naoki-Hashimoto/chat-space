@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(message) {
-    var HTML = `
+    var html = `
       <li class="message">
         <div class="message__message-hedder">
           <p class="message__message-hedder__name">
@@ -17,7 +17,7 @@ $(function() {
         </div>
       </li>
       `
-    return HTML;
+    return html;
   }
 
   $('.new-message').on('submit', function(e) {
