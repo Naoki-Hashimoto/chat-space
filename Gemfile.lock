@@ -235,7 +235,7 @@ DEPENDENCIES
   font-awesome-rails
   gon
   haml-rails (~> 0.9)
-  jbuilder (~> 2.5)
+  jbuilder
   jquery-rails
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)

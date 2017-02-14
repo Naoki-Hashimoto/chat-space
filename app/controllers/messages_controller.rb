@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path }
-        format.json { render json: @message }
+        format.json { render 'create', handlers: :jbuilder }
       end
     else
       flash.now[:alert] = 'メッセージの送信に失敗しました。'
@@ -21,7 +21,6 @@ class MessagesController < ApplicationController
   def set_group
     @group = Group.find(params[:group_id])
     @groups = current_user.groups
-    gon.user_name = current_user.name
   end
 
   def message_params

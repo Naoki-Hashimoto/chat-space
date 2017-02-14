@@ -4,10 +4,10 @@ $(function() {
       <li class="message">
         <div class="message__message-hedder">
           <p class="message__message-hedder__name">
-            ${gon.user_name}
+            ${message.name}
           </p>
           <p class="message__message-hedder__time">
-            ${message.created_at}
+            ${message.time}
           </p>
         </div>
         <div class="message__body">
@@ -36,6 +36,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.main-body__main-posts').append(html);
+      debugger;
       $this.get(0).reset();
     })
     .fail(function() {
