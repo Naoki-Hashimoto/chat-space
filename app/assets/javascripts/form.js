@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(message) {
-    var html =`
+    var html = `
       <li class="message">
         <div class="message__message-hedder">
           <p class="message__message-hedder__name">
