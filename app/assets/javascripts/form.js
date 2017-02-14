@@ -22,8 +22,9 @@ $(function() {
 
   $('.new-message').on('submit', function(e) {
     e.preventDefault();
+    var $this = $(this)
     var pathname = location.pathname;
-    var formData = new FormData($(this).get(0));
+    var formData = new FormData($this.get(0));
     $.ajax({
       type: 'POST',
       url: pathname,
@@ -35,7 +36,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.main-body__main-posts').append(html);
-      $('#message_body').val('');
+      $this.get(0).reset();
     })
     .fail(function() {
       alert('error');
