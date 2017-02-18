@@ -4,4 +4,5 @@
       = f.text_area :body, id: "message_body", placeholder: "type a message", rows: "1"
       = f.label :image, id: "message_file", type: "file", method: "post" do
         %i.fa.fa-image
+          = f.file_field :image
     = f.submit "Send", id: "send"

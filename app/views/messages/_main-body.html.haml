@@ -10,3 +10,6 @@
         .message__body
           %p.body
             = message.body
+            - if message.image?
+              %br
+              = image_tag message.image
