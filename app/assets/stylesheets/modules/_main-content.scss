@@ -106,6 +106,9 @@
         line-height: 50px;
         text-align: center;
         cursor: pointer;
+        input {
+          display: none;
+        }
       }
     }
     #send {

@@ -12,7 +12,7 @@ $(function() {
         </div>
         <div class="message__body">
           <p class="body">
-            ${message.body}
+            ${message.body}<br><img src="${message.image}">
           </p>
         </div>
       </li>

@@ -7,6 +7,12 @@ class Group < ApplicationRecord
   has_many :messages
 
   def new_message
-   messages.blank? ? "まだメッセージはありません。" : messages.last[:body] ;
+    if messages.blank?
+      "まだメッセージはありません。"
+    elsif messages.last[:image]
+        "画像が投稿されました。"
+    else
+      messages.last[:body]
+    end
   end
 end
