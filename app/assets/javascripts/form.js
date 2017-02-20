@@ -32,6 +32,7 @@ $(function() {
   $('.new-message').on('submit', function(e) {
     e.preventDefault();
     var pathname = location.pathname;
+    $('#send').removeAttr('data-disable-with');
     var formData = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
