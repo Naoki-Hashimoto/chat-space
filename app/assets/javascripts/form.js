@@ -29,6 +29,7 @@ $(function() {
     return html;
   }
 
+//以下、メッセージ投稿機能に関する記述
   $('.new-message').on('submit', function(e) {
     e.preventDefault();
     var pathname = location.pathname;
@@ -48,7 +49,27 @@ $(function() {
       $('form')[0].reset();
     })
     .fail(function() {
-      alert('error');
+      alert('投稿できませんでした。');
     });
   });
+
+//以下、5秒ごとに自動更新する機能に関する記述
+  setInterval(reload, 1000*5);
+  var pathname = location.pathname;
+  function reload(){
+    $.ajax({
+      type: 'GET',
+      url: pathname,
+      dataType: 'json'
+    })
+    .then(function(json) {
+      if(json !== null){
+        var insertHTML = '';
+        json.forEach(function(message) {
+          insertHTML += buildHTML(message);
+        });
+        $('.main-body__main-posts').append(insertHTML);
+      };
+    })
+  };
 });
