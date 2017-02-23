@@ -21,7 +21,7 @@ $(function() {
         <div class="message__body">
           <p class="body">
             ${message.body}
-            ${insertImage}
+            <br>${insertImage}
           </p>
         </div>
       </li>
@@ -30,10 +30,9 @@ $(function() {
   }
 
 //以下、メッセージ投稿機能に関する記述
-  $('.new-message').on('submit', function(e) {
+  $('#new-message').on('submit', function(e) {
     e.preventDefault();
     var pathname = location.pathname;
-    $('#send').removeAttr('data-disable-with');
     var formData = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
@@ -51,6 +50,7 @@ $(function() {
     .fail(function() {
       alert('投稿できませんでした。');
     });
+    return false
   });
 
 //以下、5秒ごとに自動更新する機能に関する記述
@@ -59,17 +59,24 @@ $(function() {
   function reload(){
     $.ajax({
       type: 'GET',
-      url: pathname,
+      url: 'messages',
+      data: {group_id: group_id},
       dataType: 'json'
     })
-    .then(function(json) {
-      if(json !== null){
+    .done(function(messages) {
+      if(messages.length !== num ){
+        $('.message').remove();
+        console.log(messages)
         var insertHTML = '';
-        json.forEach(function(message) {
+        messages.forEach(function(message) {
           insertHTML += buildHTML(message);
         });
         $('.main-body__main-posts').append(insertHTML);
-      };
+      }
     })
+    .fail(function(messages) {
+      console.log(messages)
+      console.log('更新できませんでした。');
+    });
   };
 });
