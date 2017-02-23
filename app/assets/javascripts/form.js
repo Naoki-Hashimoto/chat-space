@@ -54,8 +54,9 @@ $(function() {
   });
 
 //以下、5秒ごとに自動更新する機能に関する記述
+  var num = $('ul.main-body__main-posts').children('li').length
   setInterval(reload, 1000*5);
-  var pathname = location.pathname;
+  var group_id = $('.group_id').val();
   function reload(){
     $.ajax({
       type: 'GET',
