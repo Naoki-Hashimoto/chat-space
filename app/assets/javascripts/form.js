@@ -67,7 +67,6 @@ $(function() {
     .done(function(messages) {
       if(messages.length !== num ){
         $('.message').remove();
-        console.log(messages)
         var insertHTML = '';
         messages.forEach(function(message) {
           insertHTML += buildHTML(message);
@@ -76,7 +75,6 @@ $(function() {
       }
     })
     .fail(function(messages) {
-      console.log(messages)
       console.log('更新できませんでした。');
     });
   };
