@@ -11,12 +11,15 @@ CarrierWave.configure do |config|
       when 'production'
         config.fog_directory = ENV['test_bucket_name']
         config.asset_host = ENV['test_asset_host']
+        config.storage :fog
 
       when 'development'
         config.fog_directory = ENV['dev_bucket_name']
         config.asset_host = ENV['dev_asset_host']
+        config.storage :fog
+      when 'test'
+        config.storage :file
     end
-  else
-    config.storage :file
+    config.cache_dir = "#{Rails.root}/tmp/uploads"
   end
 end
